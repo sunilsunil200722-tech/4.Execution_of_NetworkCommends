@@ -26,39 +26,30 @@ This commands includes
 • Other IP Commands e.g. show ip route etc.
 <BR>
 
-## Program
-server.py
-~~~
-import socket
-from pythonping import ping
-
-s = socket.socket()
-s.bind(('127.0.0.1', 8000))
-s.listen(5)
-c, addr = s.accept() 
-
-while True:
-    hostname = c.recv(1024).decode()
-    try:
-        c.send(str(ping(hostname, verbose=False)).encode())
-    except KeyError:
-        c.send("Not Found".encode())
-~~~
-client.py
-~~~
-import socket
-s = socket.socket()
-s.connect(('localhost', 8000))
-while True:
-    ip = input("Enter the website you want to ping ").strip()
-    s.send(ip.encode())
-    print(s.recv(1024).decode())
-
-~~~
 ## Output
+## netstat
+<img width="1141" height="640" alt="WhatsApp Image 2026-11-02 at 1 52 41 PM" src="https://github.com/user-attachments/assets/af096ad1-6850-4089-a569-5220a9b4db92" />
 
-<img width="1216" height="386" alt="image" src="https://github.com/user-attachments/assets/83f20149-2d62-4e91-9036-dd97f026cd86" />
+## ipconfig
+<img width="1027" height="547" alt="WhatsApp Image 2026-11-02 at 1 59 30 PM" src="https://github.com/user-attachments/assets/dcc473d6-5dea-4151-bfd1-7c9dc48074cf" />
 
+## ping
+<img width="1057" height="742" alt="WhatsApp Image 2026-11-02 at 1 59 53 PM" src="https://github.com/user-attachments/assets/48215aaf-01eb-4262-8877-140cba362639" />
+
+## tracert
+<img width="901" height="427" alt="WhatsApp Image 2026-11-02 at 2 00 42 PM" src="https://github.com/user-attachments/assets/3f17b6e0-9f86-479c-9f6d-b38563a21f98" />
+
+## nslookup
+<img width="997" height="657" alt="WhatsApp Image 2026-11-02 at 2 01 04 PM" src="https://github.com/user-attachments/assets/87563d6f-67be-4ac4-9216-9f4e8a39b736" />
+
+## getmac
+<img width="1017" height="167" alt="WhatsApp Image 2026-11-02 at 2 01 28 PM" src="https://github.com/user-attachments/assets/52f50249-fe2f-4249-93a6-22e60ae18ef5" />
+
+## hostname
+<img width="967" height="60" alt="WhatsApp Image 2026-11-02 at 2 01 52 PM" src="https://github.com/user-attachments/assets/db732cb4-8865-439d-8334-29ca5c3b5398" />
+
+## arp
+<img width="1015" height="732" alt="WhatsApp Image 2026-11-02 at 2 02 41 PM" src="https://github.com/user-attachments/assets/b856d017-cb3b-4335-b198-bd115d736824" />
 
 ## Result
 Thus Execution of Network commands Performed 
